@@ -1,11 +1,9 @@
 import telegram.bot.TelegramBot
 
-const val TELEGRAM_BOT_KEY = ""
-
 const val SERVER_URL = ""
 
 fun main(args: Array<String>) {
-    val bot = TelegramBot(TELEGRAM_BOT_KEY).api()
+    val bot = TelegramBot(Config().TELEGRAM_BOT_KEY).api()
 
     bot.getMe().filter { it.ok }.map { it.result }
             .subscribe {
